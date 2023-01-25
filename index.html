@@ -9,6 +9,8 @@
 
 <!-- Tab links, each one with an onclick event associated with it -->
 <div class="tab">
+  <h1>&nbsp GVK's Store</h1>
+
   <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
   <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
   <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
@@ -18,13 +20,27 @@
 <div id="Client" class="tabcontent">
   <h3>Client Information</h3>
   <p>Tell us a bit about you.</p>
-	Choose a Category:
-	<select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
-	<option value=""></option>
-	<option value="Vegetarian">Vegetarian</option>
-    <option value="GlutenFree">GlutenFree</option>
-    <option value="None">None</option>
-	</select>
+  Choose a Category:<br>
+
+  <input type="checkbox" id="choice1" name="choice1" value="Vegetarian"
+    onchange="populateListProductChoices('displayProduct')">
+  <label for="choice1"> Vegetarian</label><br>
+
+  <input type="checkbox" id="choice2" name="choice2" value="GlutenFree"
+    onchange="populateListProductChoices('displayProduct')">
+  <label for="choice2">Gluten Free</label><br>
+
+  <input type="checkbox" id="choice3" name="choice3" value="ShellfishAllergy"
+    onchange="populateListProductChoices('displayProduct')">
+  <label for="choice3">Shellfish Allergy</label><br>
+
+  <input type="checkbox" id="choice4" name="choice4" value="Organic"
+    onchange="populateListProductChoices('displayProduct')">
+  <label for="choice4">Organic</label><br>
+
+  <input type="checkbox" id="choice5" name="choice5" value="NonOrganic"
+    onchange="populateListProductChoices('displayProduct')">
+  <label for="choice5">Non-organic</label><br>
 </div>
 
 <div id="Products" class="tabcontent">
