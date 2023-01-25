@@ -41,8 +41,6 @@ function populateListProductChoices(slct1, slct2) {
 	// <input type="checkbox" name="product" value="Bread">
 	// <label for="Bread">Bread/label><br>
 	
-	optionArray=optionArray.sort(
-		(p1, p2) => (p1.price > p2.price) ? 1 : (p1.price < p2.price) ? -1 : 0);
 		
 	for (i = 0; i < optionArray.length; i++) {
 			
