@@ -4,22 +4,115 @@
 
 var products = [
 	{
-		name: "brocoli",
+		name: "broccoli",
 		vegetarian: true,
 		glutenFree: true,
+		organic: false,
+		shellfish: false,
 		price: 1.99
 	},
 	{
 		name: "bread",
 		vegetarian: true,
 		glutenFree: false,
+		organic: false,
+		shellfish: false,
 		price: 2.35
 	},
 	{
 		name: "salmon",
 		vegetarian: false,
 		glutenFree: true,
+		organic: true,
+		shellfish: false,
 		price: 10.00
+	},
+	{
+		name: "blueberry",
+		vegetarian: true,
+		glutenFree: true,
+		organic: true,
+		shellfish: false,
+		price: 5.00
+	},
+	{
+		name: "beef",
+		vegetarian: false,
+		glutenFree: true,
+		organic: false,
+		price: 12.00
+	},
+	{
+		name: "mushroom",
+		vegetarian: true,
+		glutenFree: true,
+		organic: true,
+		shellfish: false,
+		price: 6.00
+	},
+	{
+		name: "egg",
+		vegetarian: false,
+		glutenFree: true,
+		organic: false,
+		shellfish: false,
+		price: 6.00
+	},
+	{
+		name: "shrimp",
+		vegetarian: false,
+		glutenFree: true,
+		organic: false,
+		shellfish: true,
+		price: 11.00
+	},
+	{
+		name: "zucchini",
+		vegetarian: true,
+		glutenFree: true,
+		organic: true,
+		shellfish: false,
+		price: 5.00
+	},
+	{
+		name: "tomato",
+		vegetarian: true,
+		glutenFree: true,
+		organic: false,
+		shellfish: false,
+		price: 3.00
+	},
+	{
+		name: "banana",
+		vegetarian: true,
+		glutenFree: true,
+		organic: false,
+		shellfish: false,
+		price: 2.00
+	},
+	{
+		name: "chicken",
+		vegetarian: false,
+		glutenFree: true,
+		organic: true,
+		shellfish: false,
+		price: 7.00
+	},
+	{
+		name: "noodle",
+		vegetarian: true,
+		glutenFree: false,
+		organic: false,
+		shellfish: false,
+		price: 4.50
+	},
+	{
+		name: "snow crab",
+		vegetarian: false,
+		glutenFree: true,
+		organic: false,
+		shellfish: true,
+		price: 29.50
 	}
 ];
 	

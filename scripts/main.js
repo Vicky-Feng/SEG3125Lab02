@@ -40,6 +40,9 @@ function populateListProductChoices(slct1, slct2) {
 	// for each item in the array, create a checkbox element, each containing information such as:
 	// <input type="checkbox" name="product" value="Bread">
 	// <label for="Bread">Bread/label><br>
+	
+	optionArray=optionArray.sort(
+		(p1, p2) => (p1.price > p2.price) ? 1 : (p1.price < p2.price) ? -1 : 0);
 		
 	for (i = 0; i < optionArray.length; i++) {
 			
@@ -49,12 +52,13 @@ function populateListProductChoices(slct1, slct2) {
 		checkbox.type = "checkbox";
 		checkbox.name = "product";
 		checkbox.value = productName;
+		checkbox.id = productName.price;
 		s2.appendChild(checkbox);
 		
 		// create a label for the checkbox, and also add in HTML DOM
 		var label = document.createElement('label')
-		label.htmlFor = productName;
-		label.appendChild(document.createTextNode(productName));
+		label.htmlFor = productName.name;
+		label.appendChild(document.createTextNode(productName.name+" $"+productName.price));
 		s2.appendChild(label);
 		
 		// create a breakline node and add in HTML DOM
@@ -81,6 +85,7 @@ function selectedItems(){
 	for (i = 0; i < ele.length; i++) { 
 		if (ele[i].checked) {
 			para.appendChild(document.createTextNode(ele[i].value));
+			para.appendChild(document.createTextNode(" $"+ele[i].id));
 			para.appendChild(document.createElement("br"));
 			chosenProducts.push(ele[i].value);
 		}
