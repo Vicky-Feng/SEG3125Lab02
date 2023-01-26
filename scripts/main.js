@@ -19,7 +19,6 @@ function openInfo(evt, tabName) {
 	// Show the current tab, and add an "active" class to the button that opened the tab
 	document.getElementById(tabName).style.display = "block";
 	evt.currentTarget.className += " active";
-
 }
 
 
@@ -27,23 +26,39 @@ function openInfo(evt, tabName) {
 // generate a checkbox list from a list of products
 // it makes each product name as the label for the checkbos
 
-function populateListProductChoices(slct1, slct2) {
-    var s1 = document.getElementById(slct1);
+function populateListProductChoices(slct2) {
+	var c1 = document.getElementById("choice1");
+	var c2 = document.getElementById("choice2");
+	var c3 = document.getElementById("choice3");
+	var c4 = document.getElementById("choice4");
+	var c5 = document.getElementById("choice5");
     var s2 = document.getElementById(slct2);
 	
 	// s2 represents the <div> in the Products tab, which shows the product list, so we first set it empty
     s2.innerHTML = "";
 		
 	// obtain a reduced list of products based on restrictions
-    var optionArray = restrictListProducts(products, s1.value);
+    var optionArray =products;
 
-	optionArray = optionArray.sort(
+	if (c1.checked)
+		optionArray = restrictListProducts(optionArray, "Vegetarian");
+	if (c2.checked)
+		optionArray = restrictListProducts(optionArray, "GlutenFree");
+	if (c3.checked)
+		optionArray = restrictListProducts(optionArray, "ShellfishAllergy");
+	if (c4.checked)
+		optionArray = restrictListProducts(optionArray, "Organic");
+	if (c5.checked)
+		optionArray = restrictListProducts(optionArray, "NonOrganic");
+	if(!(c1.checked||c2.checked||c3.checked||c4.checked||c5.checked))
+		optionArray = restrictListProducts(optionArray, "None");
+
+	optionArray=optionArray.sort(
 		(p1, p2) => (p1.price > p2.price) ? 1 : (p1.price < p2.price) ? -1 : 0);
 
 	// for each item in the array, create a checkbox element, each containing information such as:
 	// <input type="checkbox" name="product" value="Bread">
 	// <label for="Bread">Bread/label><br>
-	
 		
 	for (i = 0; i < optionArray.length; i++) {
 			
@@ -52,8 +67,9 @@ function populateListProductChoices(slct1, slct2) {
 		var checkbox = document.createElement("input");
 		checkbox.type = "checkbox";
 		checkbox.name = "product";
-		checkbox.value = productName;
+		checkbox.value = productName.name;
 		checkbox.id = productName.price;
+
 		s2.appendChild(checkbox);
 		
 		// create a label for the checkbox, and also add in HTML DOM
@@ -72,7 +88,7 @@ function populateListProductChoices(slct1, slct2) {
 // We build a paragraph to contain the list of selected items, and the total price
 
 function selectedItems(){
-	
+	alert("item successfully added!")
 	var ele = document.getElementsByName("product");
 	var chosenProducts = [];
 	
